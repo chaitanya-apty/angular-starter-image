@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
+
 import { TestComponentComponent } from './test-component.component';
 import { SharedModule } from '../shared/shared.module';
 import { TestComponentRoutingModule } from "./test-component-routing.module";
-import {TestComponentService} from "./test-component.service";
+import { TestComponentService } from "./test-component.service";
 
 @NgModule({
   imports: [ TestComponentRoutingModule, SharedModule ],
