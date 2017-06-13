@@ -2,11 +2,13 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
 
+// main routing module
 import { AppRoutingModule } from './app-routing.module';
 
+// application modules
 import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
-import {TestComponentModule} from "./test-component/test-component.module";
+import { TestComponentModule } from "./test-component/test-component.module";
 
 @NgModule({
     declarations: [ AppComponent ],
