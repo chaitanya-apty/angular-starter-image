@@ -1,0 +1,16 @@
+<p>This is login component</p>
+<hr />
+
+<div>
+  <form [formGroup]="loginForm" (ngSubmit)="login(loginForm.value)">
+      <label>Username: </label>
+      <input type="text" name="username" placeholder="Enter username" [formControl]="loginForm.controls['username']" />
+      <br><br>
+
+      <label>Password: </label>
+      <input type="password" name="password" placeholder="Enter password" [formControl]="loginForm.controls['password']" />
+      <br><br>
+
+      <button type="submit" [disabled]="!loginForm.valid">Login</button>
+  </form>
+</div>
