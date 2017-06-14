@@ -42,9 +42,6 @@ export class LoginComponent implements OnInit {
               if (result == true) {
                   this.router.navigate(['test']);
               }
-              else {
-                  console.log('Authentication failed!');
-              }
-          });
+          })
     }
 }

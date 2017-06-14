@@ -2,7 +2,10 @@ import { Injectable } from "@angular/core";
 
 import { Http, Headers, Response, RequestOptions } from "@angular/http";
 import { Observable } from 'rxjs';
-import 'rxjs/add/operator/map'
+
+import 'rxjs/add/operator/map';
+import 'rxjs/add/observable/throw';
+import 'rxjs/add/operator/catch';
 
 @Injectable()
 export class AuthService {
@@ -20,17 +23,21 @@ export class AuthService {
         let options = new RequestOptions({ headers: headers });
 
         return this.http.post(this.authUrl, JSON.stringify(credentials), options)
-          .map((response: Response) => {
-              let token = response.json() && response.json().id_token;
-              if (token) {
-                  this.token = token;
-                  localStorage.setItem('currentUser', JSON.stringify({username: username, token: token}));
-                  // successful login
-                  return true;
-              }
-              // failed login
-              return false;
-          });
+            .map((response: Response) => {
+                let token = response.json() && response.json().id_token;
+                if (token) {
+                    this.token = token;
+                    localStorage.setItem('currentUser', JSON.stringify({username: username, token: token}));
+                    // successful login
+                    return true;
+                }
+                // failed login
+                return false;
+            })
+            .catch(error => {
+                console.log(error._body); // print exception message!
+                return Observable.throw(error);
+            });
     }
 
     // check if user is logged in
