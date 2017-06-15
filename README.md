@@ -6,7 +6,9 @@ This project was generated with [angular-cli](https://github.com/angular/angular
 `npm install`
 
 ## Development server
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Run `npm start` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+
+`npm start` command is modified in __package.json__ file to use proxy settings. The proxy settings are in __proxy.config.json__ file.
 
 ## Code scaffolding
 
