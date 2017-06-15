@@ -10,7 +10,7 @@ import 'rxjs/add/operator/catch';
 @Injectable()
 export class AuthService {
     public token: string;
-    private authUrl = '/auth/authenticate'; // change this URL!
+    private authUrl = '/auth/authenticate'; // TODO: change this URL to your authentication route!
 
     constructor(private http: Http){
         var currentUser = JSON.parse(localStorage.getItem('currentUser'));
