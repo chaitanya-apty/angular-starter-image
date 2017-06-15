@@ -7,6 +7,7 @@ import { RouterModule } from '@angular/router';
 // translate module
 import { TranslateModule } from "ng2-translate/index";
 
+// shared components
 import { NavbarComponent } from "./navbar/navbar.component";
 import { ToolbarComponent } from "./toolbar/toolbar.component";
 
