@@ -5,18 +5,23 @@ import { HttpModule, Http } from '@angular/http';
 // main routing module
 import { AppRoutingModule } from './app-routing.module';
 
-// application modules
-import { AppComponent } from './app.component';
-import { SharedModule } from './shared/shared.module';
-import { TestComponentModule } from "./test-component/test-component.module";
-import { LoginModule } from "./login/login.module";
-
 // authentication modules
 import { AuthGuard } from "./shared/guards/auth.guard";
 import { AuthService } from "./shared/services/auth.service";
 
 // translation module
 import { TranslateStaticLoader, TranslateLoader, TranslateModule } from "ng2-translate/index";
+
+// application modules
+import { AppComponent } from './app.component';
+import { SharedModule } from './shared/shared.module';
+import { TestComponentModule } from "./test-component/test-component.module";
+import { LoginModule } from "./login/login.module";
+
+// for AoT compile!
+export function createTranslateLoader(http: Http) {
+    return new TranslateStaticLoader(http, './assets/i18n', '.json');
+}
 
 @NgModule({
     declarations: [ AppComponent ],
@@ -30,12 +35,12 @@ import { TranslateStaticLoader, TranslateLoader, TranslateModule } from "ng2-tra
 
         // main routing module
         AppRoutingModule,
-      
+
         // translate module
         TranslateModule.forRoot({
-            provide: TranslateLoader,
-            useFactory: (http: Http) => new TranslateStaticLoader(http, '/assets/i18n', '.json'),
-            deps: [ Http ]
+          provide: TranslateLoader,
+          useFactory: (createTranslateLoader),
+          deps: [ Http ]
         }),
 
         // application modules
