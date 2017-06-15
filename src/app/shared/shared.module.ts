@@ -3,14 +3,30 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 
+import { TranslateModule } from "ng2-translate/index";
+
 import { NavbarComponent } from "./navbar/navbar.component";
 import { ToolbarComponent } from "./toolbar/toolbar.component";
 
+
 @NgModule({
-  imports: [CommonModule, RouterModule],
-  declarations: [ToolbarComponent, NavbarComponent],
-  exports: [ToolbarComponent, NavbarComponent,
-    CommonModule, FormsModule, RouterModule]
+  imports: [
+      CommonModule,
+      RouterModule,
+      TranslateModule
+  ],
+  declarations: [
+      ToolbarComponent,
+      NavbarComponent
+  ],
+  exports: [
+      ToolbarComponent,
+      NavbarComponent,
+      CommonModule,
+      FormsModule,
+      RouterModule,
+      TranslateModule
+  ]
 })
 export class SharedModule {
   static forRoot(): ModuleWithProviders {
