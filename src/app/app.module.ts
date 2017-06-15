@@ -14,7 +14,6 @@ import { CovalentLayoutModule, CovalentMenuModule } from '@covalent/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MdButtonModule, MdCardModule, MdMenuModule, MdToolbarModule, MdIconModule } from '@angular/material';
 
-
 // translation module
 import { TranslateStaticLoader, TranslateLoader, TranslateModule } from "ng2-translate/index";
 
