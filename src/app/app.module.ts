@@ -9,6 +9,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { AuthGuard } from "./shared/guards/auth.guard";
 import { AuthService } from "./shared/services/auth.service";
 
+// covalent & material module
+import { CovalentLayoutModule, CovalentMenuModule } from '@covalent/core';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MdButtonModule, MdCardModule, MdMenuModule, MdToolbarModule, MdIconModule } from '@angular/material';
+
+
 // translation module
 import { TranslateStaticLoader, TranslateLoader, TranslateModule } from "ng2-translate/index";
 
@@ -35,6 +41,17 @@ export function createTranslateLoader(http: Http) {
 
         // main routing module
         AppRoutingModule,
+
+        // design modules (material & covalent)
+        CovalentLayoutModule,
+        BrowserAnimationsModule,
+        MdButtonModule,
+        MdMenuModule,
+        MdCardModule,
+        MdToolbarModule,
+        MdIconModule,
+        MdMenuModule,
+        CovalentMenuModule,
 
         // translate module
         TranslateModule.forRoot({
