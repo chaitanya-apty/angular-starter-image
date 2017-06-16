@@ -1,16 +1,20 @@
-<p>This is login component</p>
+<p class="md-padding">This is login component</p>
 <hr />
 
-<div style="padding: 20px;">
+<div class="md-padding">
   <form [formGroup]="loginForm" (ngSubmit)="login(loginForm.value)">
-      <label>Username: </label>
-      <input type="text" name="username" placeholder="Enter username" [formControl]="loginForm.controls['username']" />
+      <md-input-container>
+          <input mdInput type="text" name="username" placeholder="Enter username"
+                 [formControl]="loginForm.controls['username']" autocomplete="off" />
+      </md-input-container>
       <br><br>
 
-      <label>Password: </label>
-      <input type="password" name="password" placeholder="Enter password" [formControl]="loginForm.controls['password']" />
-      <br><br>
+      <md-input-container>
+          <input mdInput type="password" name="password" placeholder="Enter password"
+                 [formControl]="loginForm.controls['password']" autocomplete="off" />
+      </md-input-container>
 
-      <button type="submit" [disabled]="!loginForm.valid">Login</button>
+      <br><br>
+      <button md-raised-button type="submit" [disabled]="!loginForm.valid" class="mat-primary">Login</button>
   </form>
 </div>

@@ -7,6 +7,14 @@ import { RouterModule } from '@angular/router';
 // translate module
 import { TranslateModule } from "ng2-translate/index";
 
+// covalent & material module
+import { CovalentMenuModule, CovalentLayoutModule } from "@covalent/core";
+import {
+  MdIconModule, MdToolbarModule, MdCardModule, MdMenuModule, MdButtonModule,
+  MdInputModule
+} from "@angular/material";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+
 // shared components
 import { NavbarComponent } from "./navbar/navbar.component";
 import { ToolbarComponent } from "./toolbar/toolbar.component";
@@ -16,7 +24,18 @@ import { ToolbarComponent } from "./toolbar/toolbar.component";
   imports: [
       CommonModule,
       RouterModule,
-      TranslateModule
+      TranslateModule,
+
+      // design modules (material & covalent)
+      CovalentLayoutModule,
+      BrowserAnimationsModule,
+      MdButtonModule,
+      MdMenuModule,
+      MdCardModule,
+      MdToolbarModule,
+      MdIconModule,
+      CovalentMenuModule,
+      MdInputModule
   ],
   declarations: [
       ToolbarComponent,
@@ -28,7 +47,18 @@ import { ToolbarComponent } from "./toolbar/toolbar.component";
       CommonModule,
       FormsModule,
       RouterModule,
-      TranslateModule
+      TranslateModule,
+
+      // material & covalent design modules
+      CovalentLayoutModule,
+      BrowserAnimationsModule,
+      MdButtonModule,
+      MdMenuModule,
+      MdCardModule,
+      MdToolbarModule,
+      MdIconModule,
+      CovalentMenuModule,
+      MdInputModule
   ]
 })
 export class SharedModule {
