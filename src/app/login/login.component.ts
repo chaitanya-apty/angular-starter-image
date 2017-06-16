@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from "@angular/router";
 
 import { AuthService } from "../shared/services/auth.service";
-import {FormGroup, FormBuilder, Validators} from "@angular/forms";
+import { FormGroup, FormBuilder, Validators } from "@angular/forms";
 
 /**
  * This class represents the lazy loaded LoginComponent.

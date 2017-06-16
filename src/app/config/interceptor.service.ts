@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
 
 import { ConnectionBackend, RequestOptions, Request, RequestOptionsArgs, Response, Http, Headers } from "@angular/http";
-import { Observable } from "rxjs";
+import { Observable } from "rxjs/Rx";
 
 
 @Injectable()
