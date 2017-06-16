@@ -13,7 +13,7 @@ import {
   MdIconModule, MdToolbarModule, MdCardModule, MdMenuModule, MdButtonModule, MdInputModule
 } from "@angular/material";
 
-// browser ani
+// browser animation module
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
 // shared components
