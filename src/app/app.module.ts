@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpModule, Http } from '@angular/http';
+import { HttpModule, Http, XHRBackend, RequestOptions } from '@angular/http';
 
 // main routing module
 import { AppRoutingModule } from './app-routing.module';
@@ -11,6 +11,9 @@ import { AuthService } from "./shared/services/auth.service";
 
 // translation module
 import { TranslateStaticLoader, TranslateLoader, TranslateModule } from "ng2-translate/index";
+
+// interceptor factory
+import { httpFactory } from "./config/interceptor.factory";
 
 // application modules
 import { AppComponent } from './app.component';
@@ -47,7 +50,15 @@ export function createTranslateLoader(http: Http) {
         TestComponentModule,
         LoginModule
     ],
-    providers: [ AuthGuard, AuthService ],
+    providers: [
+      AuthGuard,
+      AuthService,
+      {
+          provide: Http,
+          useFactory: (httpFactory),
+          deps: [ XHRBackend, RequestOptions ]
+      }
+    ],
     bootstrap: [ AppComponent ]
 })
 
