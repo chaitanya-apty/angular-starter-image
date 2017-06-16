@@ -1,4 +1,5 @@
 import { Injectable } from "@angular/core";
+
 import { ConnectionBackend, RequestOptions, Request, RequestOptionsArgs, Response, Http, Headers } from "@angular/http";
 import { Observable } from "rxjs";
 
@@ -7,6 +8,18 @@ import { Observable } from "rxjs";
 export class HttpInterceptor extends Http {
     constructor(backend: ConnectionBackend, defaultOptions: RequestOptions) {
         super(backend, defaultOptions);
+    }
+
+    // handling not authorized or token expired situation!
+    request(url: string, options?: RequestOptionsArgs): Observable<Response> {
+        return super.request(url, this.getRequestOptionArgs(options))
+          .catch((error: Response) => {
+              if (error.status === 401 || error.status === 403){
+                  console.log('The authentication token has expired or user is not authenticated!');
+                  // do something!
+              }
+              return Observable.throw(error);
+          });
     }
 
     get(url: string, options?: RequestOptionsArgs): Observable<Response> {
