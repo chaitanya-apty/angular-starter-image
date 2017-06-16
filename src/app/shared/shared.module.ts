@@ -9,10 +9,11 @@ import { TranslateModule } from "ng2-translate/index";
 
 // covalent & material module
 import { CovalentMenuModule, CovalentLayoutModule } from "@covalent/core";
-import {
-  MdIconModule, MdToolbarModule, MdCardModule, MdMenuModule, MdButtonModule,
-  MdInputModule
+import { 
+  MdIconModule, MdToolbarModule, MdCardModule, MdMenuModule, MdButtonModule, MdInputModule 
 } from "@angular/material";
+
+// browser animation module
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
 // shared components
