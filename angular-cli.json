@@ -23,6 +23,7 @@
         "app/shared/styles/custom.style.scss"
       ],
       "scripts": [],
+	    "environmentSource": "environments/environment.ts",
       "environments": {
         "source": "environments/environment.ts",
         "dev": "environments/environment.ts",
