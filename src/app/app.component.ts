@@ -8,6 +8,8 @@ import { TranslateService } from "ng2-translate/index";
 })
 
 export class AppComponent {
+    showImage = false;
+
     constructor(translate: TranslateService) {
         translate.setDefaultLang('en');
         translate.use('en');

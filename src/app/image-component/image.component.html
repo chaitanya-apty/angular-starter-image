@@ -1,0 +1,21 @@
+<div *ngIf="showImage">
+    <div *ngIf="loading" class="dropzone" 
+            dragNdrop
+            (uploadClick)="this.fileInput.click()"
+            (files)="showImagePreview($event)">
+        <div class="text-wrapper">
+            <div class="centered">Drop your files / Click to Upload</div>
+        </div>
+    </div>
+        
+    <img    id="ImagePreview" *ngIf="!loading || imageSource"  
+            width="500" height="300"
+            (load)="onLoad()"
+            [src]="imageSource | sanitizeUrl" alt="Announcement Image"
+     />
+
+
+
+
+    <input style="display:none;" #fileInput type="file" (change)="onFileInput($event.target)" [accept]="FileAttributes"/>
+</div>

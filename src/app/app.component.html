@@ -1,8 +1,12 @@
-<td-layout-nav toolbarTitle="Angular 4 Demo" logo="svgIconName" navigationRoute="/">
+<!-- <td-layout-nav toolbarTitle="Angular 4 Demo" logo="svgIconName" navigationRoute="/">
 
-    <router-outlet></router-outlet>
     <td-layout-footer>
         Copyright Logate D.O.O
     </td-layout-footer>
-</td-layout-nav>
-
+</td-layout-nav> -->
+<input type="checkbox" [(ngModel)]="showImage"/> Enable Image
+<toh-spinner-img 
+    [imageSource]="" 
+    [showImage]="showImage"
+    [spinnerSrc]="'/assets/images/upload.png'">
+</toh-spinner-img>

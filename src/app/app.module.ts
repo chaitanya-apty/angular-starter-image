@@ -20,6 +20,9 @@ import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
 import { TestComponentModule } from "./test-component/test-component.module";
 import { LoginModule } from "./login/login.module";
+import { SpinnerImgComponent } from './image-component/image.component';
+import { SanitizerUrlPipe } from './image-component/sanitize.pipe';
+import { DragDirective } from './image-component/dragNdrop.directive';
 
 // for AoT compile!
 export function createTranslateLoader(http: Http) {
@@ -27,7 +30,7 @@ export function createTranslateLoader(http: Http) {
 }
 
 @NgModule({
-    declarations: [ AppComponent ],
+    declarations: [ AppComponent,DragDirective, SpinnerImgComponent, SanitizerUrlPipe ],
     imports: [
         // core modules
         BrowserModule,
@@ -57,7 +60,7 @@ export function createTranslateLoader(http: Http) {
           provide: Http,
           useFactory: (httpFactory),
           deps: [ XHRBackend, RequestOptions ]
-      }
+      },
     ],
     bootstrap: [ AppComponent ]
 })
